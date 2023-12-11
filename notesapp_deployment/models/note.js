@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 mongoose.set('strictQuery',false)
 
-const url = process.env.MONGODB_URI
+const url = `${process.env.MONGODB_URI}`
 
 mongoose
     .connect(url)
@@ -11,6 +11,7 @@ mongoose
     })
     .catch((error) => {
         console.log('error connecting to MongoDB: ', error.message)
+        console.log(error)
     })
 
 const noteSchema = new mongoose.Schema({
