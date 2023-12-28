@@ -1,6 +1,6 @@
 POST http://localhost:3001/api/notes
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik15VXNlcm5hbWUiLCJpZCI6IjY1ODUzOWY4OTEwNzNjYTkyZjU5MTYxMyIsImlhdCI6MTcwMzcxMTM5Mn0.cZiYG62Qcvs1kx97NA0Y9nwSBFztUvmoYBh4DEmXGB0
+Authorization: Bearer 
 
 {
     "content": "New note example",
