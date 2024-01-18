@@ -53,7 +53,7 @@ const App = () => {
         likes: likes+1
       })
 
-      setBlogs(blogs.map((b) => b.id === id ? returnedBlog : b))
+      setBlogs(blogs.map((b) => b.id === id ? { ...returnedBlog, user } : b))
       setErrorMessage({ status: 'success', message: `liked blog ${title}` })
       setTimeout(() => {
         setErrorMessage(null)
@@ -134,6 +134,7 @@ const App = () => {
           value={username}
           name="Username"
           onChange={({ target }) => setUsername(target.value)}
+          id="username"
         />
       </div>
       <div>
@@ -143,14 +144,15 @@ const App = () => {
           value={password}
           name="Password"
           onChange={({ target }) => setPassword(target.value)}
+          id="password"
         />
       </div>
-      <button type="submit">login</button>
+      <button type="submit" id="login-button">login</button>
     </form>
   )
 
   const blogForm = () => (
-    <Togglable buttonLabel="new note">
+    <Togglable buttonLabel="new blog">
       <BlogForm createBlog={addBlog} />
     </Togglable>
   )
